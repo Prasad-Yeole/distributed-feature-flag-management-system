@@ -154,18 +154,21 @@ FeatureFlag (1) → (N) AuditLog
 
 #
 
-![](https://raw.githubusercontent.com/Prasad-Yeole/distributed-feature-flag-management-system/main/docs/screenshots/dashboard.png)
+![]([https://raw.githubusercontent.com/Prasad-Yeole/distributed-feature-flag-management-system/main/docs/screenshots/dashboard.png](https://github.com/Prasad-Yeole/distributed-feature-flag-management-system/blob/main/Screenshot%20from%202026-03-22%2021-29-11.png))
 
 #
 
-![](https://raw.githubusercontent.com/Prasad-Yeole/distributed-feature-flag-management-system/main/docs/screenshots/config.png)
+![]([https://raw.githubusercontent.com/Prasad-Yeole/distributed-feature-flag-management-system/main/docs/screenshots/config.png](https://github.com/Prasad-Yeole/distributed-feature-flag-management-system/blob/main/Screenshot%20from%202026-03-22%2021-25-31.png))
 
 #
 
-![](https://raw.githubusercontent.com/Prasad-Yeole/distributed-feature-flag-management-system/main/docs/screenshots/audit-logs.png)
+![]([https://raw.githubusercontent.com/Prasad-Yeole/distributed-feature-flag-management-system/main/docs/screenshots/audit-logs.png](https://github.com/Prasad-Yeole/distributed-feature-flag-management-system/blob/main/Screenshot%20from%202026-03-22%2021-26-02.png))
 
 #
-![](https://i.imgur.com/waxVImv.png)
+![]([https://i.imgur.com/waxVImv.png](https://github.com/Prasad-Yeole/distributed-feature-flag-management-system/blob/main/Screenshot%20from%202026-03-22%2021-25-51.png))
+
+#
+![]([[https://i.imgur.com/waxVImv.png](https://github.com/Prasad-Yeole/distributed-feature-flag-management-system/blob/main/Screenshot%20from%202026-03-22%2021-25-51.png)](https://github.com/Prasad-Yeole/distributed-feature-flag-management-system/blob/main/Screenshot%20from%202026-03-22%2021-29-22.png))
 
 <div align="center">
     <h1>AUTHOR</h1>
@@ -176,5 +179,7 @@ FeatureFlag (1) → (N) AuditLog
 #
 
 Name    : Prasad Yeole
+
 Project : Distributed Feature Flag Management System
+
 Role    : Full Stack Developer
