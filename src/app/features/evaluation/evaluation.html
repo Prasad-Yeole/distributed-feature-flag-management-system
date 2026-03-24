@@ -1,0 +1,82 @@
+<div class="container">
+
+  <div class="header">
+    <h2>Feature Evaluation</h2>
+    <p>Test feature flags for a user in a specific environment</p>
+  </div>
+
+  <div class="card">
+
+    <!-- Inputs Grid -->
+    <div class="form-grid">
+
+      <!-- Feature -->
+      <div class="form-group">
+        <label>Feature</label>
+        <select (change)="selectedFeature.set($any($event.target).value)">
+          <option value="">Select Feature</option>
+          <option *ngFor="let f of features()" [value]="f.name">
+            {{ f.name }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Environment -->
+      <div class="form-group">
+        <label>Environment</label>
+        <select (change)="selectedEnv.set($any($event.target).value)">
+          <option value="">Select Environment</option>
+          <option *ngFor="let env of environments()" [value]="env.name">
+            {{ env.name }}
+          </option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- User ID -->
+    <div class="form-group">
+      <label>User ID</label>
+      <input
+        type="text"
+        placeholder="Enter User ID"
+        (input)="userId.set($any($event.target).value)"
+      />
+    </div>
+
+    <!-- Button -->
+    <button class="btn primary" (click)="evaluate()" [disabled]="loading()">
+      {{ loading() ? 'Evaluating...' : 'Evaluate Feature' }}
+    </button>
+
+    <!-- Result -->
+    <div *ngIf="result()" class="result-card"
+         [class.enabled]="result()?.enabled"
+         [class.disabled]="!result()?.enabled">
+
+      <div class="result-header">
+        <h3>Evaluation Result</h3>
+
+        <span class="status-badge"
+              [class.success]="result()?.enabled"
+              [class.error]="!result()?.enabled">
+          {{ result()?.enabled ? 'ENABLED' : 'DISABLED' }}
+        </span>
+      </div>
+
+      <div class="result-content">
+        <p><span>Feature:</span> {{ result()?.featureName }}</p>
+        <p><span>User ID:</span> {{ userId() }}</p>
+        <p><span>Environment:</span> {{ selectedEnv() }}</p>
+        <p><span>Reason:</span> {{ result()?.reason }}</p>
+      </div>
+
+    </div>
+
+    <!-- Error -->
+    <div *ngIf="error()" class="error-box">
+      {{ error() }}
+    </div>
+
+  </div>
+</div>

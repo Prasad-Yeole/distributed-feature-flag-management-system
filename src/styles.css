@@ -1,0 +1,93 @@
+/* Base select */
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background-color: #f8fafc;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+select:focus {
+  border-color: #4f46e5;
+  outline: none;
+}
+
+/* ========================= */
+/* 🌙 DARK MODE GLOBAL */
+/* ========================= */
+
+body.dark-theme {
+  background-color: #020617;
+  color: #e2e8f0;
+}
+
+/* Inputs */
+body.dark-theme input,
+body.dark-theme select {
+  background-color: #020617;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+}
+
+/* Buttons */
+body.dark-theme button {
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+
+/* Cards */
+body.dark-theme .card {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+}
+
+/* Tables */
+body.dark-theme table {
+  background-color: #020617;
+}
+
+body.dark-theme th,
+body.dark-theme td {
+  border: 1px solid #334155;
+  color: #e2e8f0;
+}
+
+/* Text */
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme p {
+  color: #e2e8f0;
+}
+
+/* FORCE NAVBAR DARK */
+body.dark-theme .navbar {
+  background-color: #0f172a !important;
+  border-bottom: 1px solid #1e293b !important;
+}
+
+body.dark-theme .logo {
+  color: #e2e8f0 !important;
+}
+
+body.dark-theme .links a {
+  color: #cbd5f5 !important;
+}
+
+body.dark-theme .links a.active {
+  color: #818cf8 !important;
+}
+
+body.dark-theme .links a.active::after {
+  background-color: #818cf8 !important;
+}
+
+/* ROW HOVER FIX */
+tr:hover {
+  background-color: #f8fafc;
+}
+
+/* DARK MODE HOVER */
+body.dark-theme tr:hover {
+  background-color: #1e293b;
+}

@@ -1,0 +1,32 @@
+<nav class="navbar">
+    <div class="container">
+
+        <div class="logo">
+            FeatureFlag
+        </div>
+
+        <div class="links">
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                Dashboard
+            </a>
+
+            <a routerLink="/config" routerLinkActive="active">
+                Config
+            </a>
+
+            <a routerLink="/evaluate" routerLinkActive="active">
+                Evaluate
+            </a>
+
+            <a routerLink="/audit" routerLinkActive="active">
+                Audit Logs
+            </a>
+
+            <!-- 🌙 THEME BUTTON -->
+            <button class="theme-btn" (click)="toggleTheme()">
+                {{ isDark() ? 'Light Mode' : 'Dark Mode' }}
+            </button>
+        </div>
+
+    </div>
+</nav>

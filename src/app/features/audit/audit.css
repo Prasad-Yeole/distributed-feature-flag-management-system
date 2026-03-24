@@ -1,0 +1,129 @@
+/* Container */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 24px;
+}
+
+/* Header */
+.header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.header p {
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* Filter card */
+.filter-card {
+  margin-top: 20px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-card label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+}
+
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  max-width: 300px;
+}
+
+select:focus {
+  border-color: #4f46e5;
+  outline: none;
+  background: #fff;
+}
+
+/* Loading */
+.loading {
+  margin-top: 20px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Card */
+.card {
+  margin-top: 10px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  overflow-x: auto;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Header */
+th {
+  text-align: left;
+  font-size: 13px;
+  color: #64748b;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Rows */
+td {
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+  color: #334155;
+}
+
+/* Feature name */
+.feature {
+  font-weight: 500;
+  color: #0f172a;
+}
+
+/* Timestamp */
+.time {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* Badge */
+.badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Action colors */
+.create {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.update {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.delete {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Hover effect */
+tbody tr:hover {
+  background: #f8fafc;
+}

@@ -1,0 +1,58 @@
+<div class="container">
+
+  <div class="header">
+    <h2>Audit Logs</h2>
+    <p>Track all changes made to feature flags</p>
+  </div>
+
+  <!-- Filter -->
+  <div class="filter-card">
+    <label>Filter by Feature</label>
+    <select (change)="onFeatureChange($event)">
+      <option value="">All Features</option>
+      <option *ngFor="let f of features()" [value]="f.name">
+        {{ f.name }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Loading -->
+  <div *ngIf="loading()" class="loading">
+    Loading logs...
+  </div>
+
+  <!-- Table -->
+  <div class="card" *ngIf="!loading()">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Action</th>
+          <th>Changed By</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let log of logs()">
+          <td class="feature">{{ log.featureName }}</td>
+
+          <td>
+            <span class="badge"
+                  [class.create]="log.action === 'CREATE'"
+                  [class.update]="log.action === 'UPDATE'"
+                  [class.delete]="log.action === 'DELETE'">
+              {{ log.action }}
+            </span>
+          </td>
+
+          <td>{{ log.changedBy }}</td>
+          <td class="time">{{ log.timestamp }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>

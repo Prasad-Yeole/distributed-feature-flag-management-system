@@ -1,0 +1,84 @@
+<div class="container">
+
+  <div class="header">
+    <h2>Feature Configuration</h2>
+    <p>Control feature behavior across environments</p>
+  </div>
+
+  <div class="card">
+
+    <!-- Feature -->
+    <div class="form-group">
+      <label>Feature</label>
+      <select (change)="selectedFeatureId.set($any($event.target).value)">
+        <option value="">Select Feature</option>
+        <option *ngFor="let f of features()" [value]="f.id">
+          {{ f.name }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Environment -->
+    <div class="form-group">
+      <label>Environment</label>
+      <select (change)="selectedEnvId.set($any($event.target).value)">
+        <option value="">Select Environment</option>
+        <option *ngFor="let env of environments()" [value]="env.id">
+          {{ env.name }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Feature Status (Improved UI) -->
+    <div class="status-row">
+
+      <div class="status-info">
+        <span class="status-title">
+          Feature Status:
+          <strong [class.active-text]="enabled()" [class.inactive-text]="!enabled()">
+            {{ enabled() ? 'Enabled' : 'Disabled' }}
+          </strong>
+        </span>
+        <span class="status-sub">Enable or disable this feature</span>
+      </div>
+
+      <label class="switch">
+        <input
+          type="checkbox"
+          (change)="enabled.set($any($event.target).checked)"
+          [checked]="enabled()" />
+        <span class="slider"></span>
+      </label>
+
+    </div>
+
+    <!-- Rollout -->
+    <div class="form-group">
+      <div class="slider-header">
+        <label>Rollout Percentage</label>
+        <span class="badge">{{ rollout() }}%</span>
+      </div>
+
+      <input
+        type="range"
+        min="0"
+        max="100"
+        [value]="rollout()"
+        (input)="rollout.set($any($event.target).value)" />
+    </div>
+
+    <!-- Save Button -->
+    <button class="btn primary" (click)="saveConfig()">
+      Save Configuration
+    </button>
+
+    <!-- Message -->
+    <div *ngIf="message()"
+         class="alert"
+         [class.success]="!isError()"
+         [class.error]="isError()">
+      {{ message() }}
+    </div>
+
+  </div>
+</div>

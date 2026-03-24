@@ -1,0 +1,102 @@
+<div class="container">
+
+  <div class="header">
+    <h2>Feature Dashboard</h2>
+    <p>Manage and control your feature flags</p>
+  </div>
+
+  <!-- FORM CARD -->
+  <div class="card form-card">
+    <h3>{{ editingId() ? 'Update Feature' : 'Create Feature' }}</h3>
+
+    <div class="form-grid">
+      <input
+        type="text"
+        placeholder="Feature Name"
+        [value]="name()"
+        (input)="name.set($any($event.target).value)"
+      />
+
+      <input
+        type="text"
+        placeholder="Owner"
+        [value]="owner()"
+        (input)="owner.set($any($event.target).value)"
+      />
+
+      <input
+        type="text"
+        placeholder="Description"
+        class="full-width"
+        [value]="description()"
+        (input)="description.set($any($event.target).value)"
+      />
+
+      <label class="switch">
+        <input
+          type="checkbox"
+          (change)="active.set($any($event.target).checked)"
+          [checked]="active()"
+        />
+        <span class="slider"></span>
+        <span class="label-text">Active</span>
+      </label>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary" (click)="saveFeature()">
+        {{ editingId() ? 'Update' : 'Create' }}
+      </button>
+
+      <button class="btn ghost" *ngIf="editingId()" (click)="resetForm()">
+        Cancel
+      </button>
+    </div>
+
+    <p class="message">{{ message() }}</p>
+  </div>
+
+  <!-- TABLE CARD -->
+  <div class="card">
+    <div class="card-header">
+      <h3>Feature List</h3>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Owner</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let feature of features()">
+          <td class="name">{{ feature.name }}</td>
+
+          <td>
+            <span class="badge"
+              [class.success]="feature.active"
+              [class.danger]="!feature.active">
+              {{ feature.active ? 'Active' : 'Inactive' }}
+            </span>
+          </td>
+
+          <td>{{ feature.owner }}</td>
+
+          <td class="action-buttons">
+            <button class="btn small ghost" (click)="editFeature(feature)">
+              Edit
+            </button>
+            <button class="btn small danger" (click)="deleteFeature(feature.id)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
